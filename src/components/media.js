@@ -1,17 +1,18 @@
-import React, {Component} from 'react';  
-  
-class Media extends Component {  
-  render(){  
-    return (  
-      <div className="media my-3">  
-        <img src={process.env.PUBLIC_URL+"/image/"+this.props.image}  
-          className="mr-3" alt="media" width="100" />  
-        <div className="media-body text-left">  
-          <h5 className="mt-0">{this.props.title}</h5>  
-          {this.props.children}  
-        </div>  
-      </div>  
-    );  
-  }  
-}  
-export default Media;  
+import React from 'react'
+
+export default class Media extends React.Component{
+    render(){
+        return(
+            <div className={'row alert alert-' + this.props.type}>
+                <div className='col col-auto'>
+                    <img src={process.env.PUBLIC_URL+'/asset/'+this.props.image}
+                        className='mr-3' width='100 px' alt='media' />
+                </div>
+                <div className='col col-auto text-left'>
+                    <h4 className='mt-0'>{this.props.title}</h4>
+                    <p>{this.props.children}</p>
+                </div>
+            </div>
+        )
+    }
+} 
